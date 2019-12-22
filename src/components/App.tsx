@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { SafeAreaView } from 'react-native';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {SafeAreaView} from 'react-native';
+import {connect} from 'react-redux';
 import TransactionList from './transaction/TransactionList';
 import AppAction from '../redux/action/AppAction';
 import AppState from '../redux/state/AppState';
-import { Container, UpdateButton, Title } from './styled';
+import {Container, UpdateButton, Title} from './styled';
 
 interface AppProps {
   appData: AppState;
