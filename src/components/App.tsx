@@ -8,7 +8,8 @@ import {Container, UpdateButton, Title} from './styled';
 
 interface AppProps {
   appData: AppState;
-  getList: (searchStr?: string) => any;
+  getList: () => any;
+  updateTransaction: (id: number) => any;
 }
 
 class App extends Component<AppProps> {
@@ -31,7 +32,10 @@ class App extends Component<AppProps> {
           onItemPress={() => alert('Clicked')}
         />
         <Container>
-          <UpdateButton onPress={() => {}}>
+          <UpdateButton
+            onPress={() => {
+              this.props.updateTransaction(1), this.props.getList();
+            }}>
             <Title>Click me</Title>
           </UpdateButton>
         </Container>
@@ -49,6 +53,8 @@ function mapStateToProps(state: any) {
 function mapDispatchToProps(dispatch: any) {
   return {
     getList: () => dispatch(AppAction.getTransactions()),
+    updateTransaction: (id: number) =>
+      dispatch(AppAction.updateTransaction(id)),
   };
 }
 

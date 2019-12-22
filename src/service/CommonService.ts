@@ -16,4 +16,22 @@ export default abstract class CommonService<T extends CommonModel>
       throw error;
     }
   }
+
+  async updateTransaction(id: number): Promise<T | null> {
+    try {
+      const response = await fetch(this.rootURL + id, {
+        method: 'PUT',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Cannot fetch data');
+      }
+      return response.json();
+    } catch (error) {
+      throw error;
+    }
+  }
 }

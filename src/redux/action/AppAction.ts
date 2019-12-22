@@ -9,10 +9,19 @@ export default class AppAction {
     'AppAction.SHOW_TRANSACTION_LIST';
   public static readonly SHOW_TRANSACTION_DETAIL: string =
     'AppAction.SHOW_TRANSACTION_DETAIL';
+  public static readonly POST_TRANSACTION: string =
+    'AppAction.POST_TRANSACTION';
 
   public static getTransactions = (): IAction<String, void> => {
     return {
       type: AppAction.GET_TRANSACTIONS,
     };
   };
+
+  public static updateTransaction(id: number): IAction<number, void> {
+    return {
+      payload: id,
+      type: AppAction.POST_TRANSACTION,
+    };
+  }
 }
