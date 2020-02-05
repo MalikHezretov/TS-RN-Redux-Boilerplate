@@ -1,4 +1,4 @@
-# React Native, TypeScript, Redux-saga and Hooks demo app
+# React Native, TypeScript, Redux-saga setup
 
 ## Step to run
 
